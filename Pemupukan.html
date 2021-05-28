@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Pengolahan Tanah</title>
+			<link rel="stylesheet" type="text/css" href="style.css">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+        	ul {
+            width: 100%;
+            height: 44px;
+            float: left;
+            margin: 10;
+            padding: 0;
+            overflow: hidden;
+            background-color: #092508;
+			}
+			ul .search-container{
+				float: left;
+			}
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #14bb06;
+			min-width: 160px;
+			}
+			.dropdown-content a {
+			color: white;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			z-index: 1;
+			}
+			.dropdown-content a:hover {background-color: #14bb06}
+			.dropdown:hover .dropdown-content {
+			display: block;
+			z-index: 1;
+			}
+			.dropdown:hover .dropbtn {
+			background-color: limegreen;
+			z-index: 1;
+			}
+			ul input[type=text] {
+			padding: 6px;
+			margin-top: 5.5px;margin-left: 10px;
+			font-size: 17px;
+			border: none;
+			}
+			ul .search-container button {
+			float: right;
+			padding:6px 10px;
+			margin-top: 5.5px;
+			margin-right: 16px;
+			background: #ddd;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			}
+			ul .search-container button:hover {
+			background: #ccc;
+			}
+			@media screen and (max-width: 600px) {
+			ul .search-container {
+				float: none;
+			}
+
+			ul a, ul input[type=text], ul .search-container button {
+				float: none;
+				display: block;
+				text-align: left;
+				width: 100%;
+				margin: 0;
+				padding: 14px;
+			}
+			ul input[type=text] {
+				border: 1px solid #ccc;  
+			}
+			}
+            li {
+            float: left;
+            }
+
+            li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+            background-color: limegreen;
+            }
+
+            .active {
+            background-color: limegreen;
+            }
+			* {box-sizing: border-box;}
+			body {font-family: Verdana, sans-serif;}
+			.mySlides {display: none;}
+			img {vertical-align: middle;}
+
+			/* Slideshow container */
+			.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+			}
+
+			/* Caption text */
+			.text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+			}
+
+			/* Number text (1/4 etc) */
+			.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+			}
+
+			/* The dots/bullets/indicators */
+			.dot {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+			}
+
+			.active {
+			background-color: limegreen;
+			}
+
+			/* Fading animation */
+			.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+			}
+
+			@-webkit-keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			@keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			/* On smaller screens, decrease text size */
+			@media only screen and (max-width: 300px) {
+			.text {font-size: 11px}
+			}
+			body{
+				background-color: #14bb06;
+				padding: 0;
+				margin: 10x;
+				font-family: Times New Roman, sans;
+			}
+			.body-responsive{
+				margin-bottom: 15px
+			}
+			.body-responsive .Artikel{
+				background-color:#14bb06;
+				float: left;
+				width: 65%;
+				text-align: center;
+			}
+			.body-responsive .Artikel h3, .body-responsive .Artikel h6, .body-responsive .Artikel img, .body-responsive .Artikel p{
+				margin: 5px
+				padding: 14px 25px;
+			}
+			@media (max-width: 500px){
+				.body-responsive .Artikel{
+					background-color: #14bb06;
+					float: right;
+					width: 50%
+				}
+			
+			}
+			
+            .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 22px;
+            background-color: #092508;
+            color: white;
+            text-align: center;
+            }
+		</style>
+		</head>
+		<body>
+        <ul>
+            <li><a href="Home.html" >HOME</a></li>
+			<div class="search-container">
+				<form action="/action_page.php">
+				  <input type="text" placeholder="Search.." name="search">
+				  <button href="https://www.google.com/webhp?client=firefox-b-d" type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>	
+			<li style="float:right"><a></a></li>
+            <li style="float:right"><a href="Galery.html" >GALERY</a></li>
+			<li style="float:right">
+				<div class="dropdown">
+					<a class="active" style=color:white href="Menu.html">MENU</a>
+					<div class="dropdown-content">
+					<a href="Pengolahan Tanah.html">Pengolahan Tanah</a>
+					<a href="Pembibitan.html">Pembibitan</a>
+					<a href="Pemupukan.html" class="active">Pemupukan</a>
+					<a href="http://www.priangan.org/dashboard/umum/11/sentra">Informasi Harga Jual</a>
+					</div>
+				</div>
+			</li>
+            <li style="float:right"><a href="Contact Us.html" >CONTACT US</a></li>
+        </ul>
+        <div id="Write">
+			<h1 style="text-align:center">SEMUA TENTANG DUNIA PERTANIAN</h1>
+		</div>
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 4</div>
+				<img src="https://tabloidsinartani.com/uploads/news/images/770x413/-_200509140948-388.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pengolahan Tanah</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">2 / 4</div>
+				<img src="https://www.rmoljateng.com/images/berita/2019/03/108759_04183906032019_tanaman_hortikultural_.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pembibitan</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">3 / 4</div>
+				<img src="https://asset.kompas.com/crops/P5UF6sNb4CUY-7xJ81zS3BnEt3k=/7x0:1000x662/750x500/data/photo/2021/01/20/6007b74724c75.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pemupukan</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">4 / 4</div>
+				<img src="https://s3-ap-southeast-1.amazonaws.com/8villages/a1d3bd72-f4e8-4bfa-b595-becf26cf76a8-mobile.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pemasaran</div>
+			  </div>
+			  
+			  </div>
+			<br>
+			
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div>
+			
+			<script>
+			var slideIndex = 0;
+			showSlides();
+			
+			function showSlides() {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			  }
+			  slideIndex++;
+			  if (slideIndex > slides.length) {slideIndex = 1}    
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			  setTimeout(showSlides, 2000); // Change image every 2 seconds
+			}
+			</script>
+		<div id="Write">
+			<h2 style="text-align:center;margin-top: 50px;">PEMUPUKAN</h2>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel">
+				<img src="http://kumpulrejo.desa.id//upload/berita/158147671727756_620.jpg" width="85%" style="padding-top: 10px;">
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Petani sangat membutuhkan pengetahuan tentang metode pemupukan yang benar. Ini berefek langsung pada tingkat efektivitas dan efisiensi penggunaan pupuk. Saat ini telah banyak pupuk yang beredar dengan berbagai bentuk. Mulai dari granular, tepung hingga cair. Semuanya tak bisa disamakan dalam aplikasinya, agar penyerapan unsur hara oleh tanaman bisa maksimal. Berikut beberapa metode pemupukan yang bisa dilakukan petani.</h4>
+				<h3 style="text-align: justify;padding-left: 50px;padding-right: 50px;padding-top: 20px;">1. Pemupukan Melalui Akar Tanaman</h3>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">a. Disebar (broadcasting)</h4>
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644532-627-306496.png" width="85%" style="padding-top: 10px;">
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Pemupukan dilakukan dengan cara meyebar pupuk secara merata pada tanah-tanah di sekitar pertanaman atau pada waktu pembajakan/penggaruan terakhir. Pemupukan dengan cara disebar biasanya dilakukan sehari sebelum tanam, kemudian diinjak-injak agar pupuk masuk ke dalam tanah. Cara pemupukan ini biasanya digunakan untuk memupuk tanaman padi, kacang-kacangan dan lain-lain yang mempunyai jarak tanam rapat.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;padding-top: 20px;">b. Larikan atau Barisan (ring placement)</h4>
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644556-622-711190.jpg" width="85%" style="padding-top: 10px;">
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Pemupukan dilakukan dengan cara menaburkan pupuk di antara larikan tanaman. Untuk tanaman tahunan, pupuk bisa ditaburkan melingkari tanaman dengan jarak tegak lurus dengan daun terjauh (tajuk daun). Cara ini dilakukan dengan pertimbangan sebagai berikut: </h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">pupuk yang digunakan relatif sedikit,</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- jarak tanam antartanaman yang dipupuk cukup jarang dan jarak antara barisan pertanaman cukup jarang,</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- kesuburan tanah rendah,</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- tanaman dengan perkembangan akar yang sedikit,</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- untuk tanah tegalan atau darat.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;padding-top: 20px;">c. Ditempatkan dalam Lubang (spot placement)</h4>
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644579-498-978150.jpg" width="85%" style="padding-top: 10px;">
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Pemupukan ini dilakukan dengan cara memebenamkan pupuk ke dalam lubang di samping batang sedalam kurang lebih 10 cm dan ditutup dengan tanah. Atau bisa juga dikocor dengan cara menyiramkan pupuk jarak 5-10 cm dari pangkal batang.</h4>
+				<h3 style="text-align: justify;padding-left: 50px;padding-right: 50px;padding-top: 20px;">2. Pemupukan Melalui Daun Tanaman (Spraying)</h4>
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644603-878-908595.jpg" width="85%" style="padding-top: 10px;">
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Pemupukan ini dilakukan dengan cara melarutkan pupuk dalam air dengan konsentrasi sangat rendah kemudian disemprotkan langsung pada daun dengan alat penyemprot biasa (hand sprayer). Sebelum melakukan penyemprotan, ada beberapa hal yang harus diperhatikan:</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Konsentrasi larutan pupuk yang dibuat harus sangat rendah atau mengikuti petunjuk dalam kemasan pupuk. Jika konsentrasinya lebih rendah dari anjuran maka untuk mengimbanginya bisa memperbanyak frekuensi pemupukan, misalnya dari setiap 10 hari bisa dipercepat jadi seminggu sekali.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Pupuk daun disemprotkan ke bagian daun yang menghadap ke bawah karena mulut daun (stomata) umumnya menghadap ke bawah atau bagain punggung daun</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Pupuk hendaknya disemprotkan ketika matahari tidak sedang terik-teriknya. Paling ideal dilakukan sore atau pagi</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Penyemprotan pupuk daun tidak dilakukan pada saat hujan, karena beresiko pupuk daun akan habis tercuci oleh air hujan.</h4>
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644717-368-600409.jpg" width="85%" style="padding-top: 10px;">
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Pemberian pupuk daun bisa dilakukan bersamaan dengan pemberian pestisida jika dianggap perlu atau bersamaan dengan zat perangsang.</h4>
+				<h3 style="text-align: justify;padding-left: 50px;padding-right: 50px;padding-top: 20px;padding-top: 20px;">Larangan dalam melakukan peyemprotan daun tanaman:</h3>
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644761-608-210029.jpg" width="85%"style="padding-top: 10px;">
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Pada saat tunas telah muncul, penyemprotan dihentikan sebab tunas muda ini amat peka terhadap pupuk, apalagi kalau dosisnya melebihi dari yang dianjurkan.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Pada saat bunga mulai mekar, penyemprotan harus dihentikan agar bunga bakal buah yang dinanti-nanti tidak rontok (keguguran).</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Satu lagi tanaman yang tidak bisa disemprot pupuk daun ialah tanaman yang baru dipindah ke lapangan karena tanaman itu masih terhitung masih muda dan lemas.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;padding-top: 20px;">Aplikasi pemupukan pada tanaman semusim dan tahunan berbeda. Pada tanaman semusim seperti kacang-kacangan, sayuran, padi, jagung, dan lainnya menggunakan metode pemupukan secara disebar, dalam lubang, atau larikan. Sedangkan pada tanaman tahunan seperti tanaman buah-buahan, kopi, teh, kakao, kelapa, dan lainnya menggunakan metode ring placement.</h4>
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644786-959-140809.jpg" width="85%" style="padding-top: 10px;padding-bottom: 100px;">
+			</div>
+		</div>
+		<div class="footer">
+        </div>
+	</body>
+</html>

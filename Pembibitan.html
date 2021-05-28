@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Pengolahan Tanah</title>
+			<link rel="stylesheet" type="text/css" href="style.css">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+        	ul {
+            width: 100%;
+            height: 44px;
+            float: left;
+            margin: 10;
+            padding: 0;
+            overflow: hidden;
+            background-color: #092508;
+			}
+			ul .search-container{
+				float: left;
+			}
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #14bb06;
+			min-width: 160px;
+			}
+			.dropdown-content a {
+			color: white;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			z-index: 1;
+			}
+			.dropdown-content a:hover {background-color: #14bb06}
+			.dropdown:hover .dropdown-content {
+			display: block;
+			z-index: 1;
+			}
+			.dropdown:hover .dropbtn {
+			background-color: limegreen;
+			z-index: 1;
+			}
+			ul input[type=text] {
+			padding: 6px;
+			margin-top: 5.5px;margin-left: 10px;
+			font-size: 17px;
+			border: none;
+			}
+			ul .search-container button {
+			float: right;
+			padding:6px 10px;
+			margin-top: 5.5px;
+			margin-right: 16px;
+			background: #ddd;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			}
+			ul .search-container button:hover {
+			background: #ccc;
+			}
+			@media screen and (max-width: 600px) {
+			ul .search-container {
+				float: none;
+			}
+
+			ul a, ul input[type=text], ul .search-container button {
+				float: none;
+				display: block;
+				text-align: left;
+				width: 100%;
+				margin: 0;
+				padding: 14px;
+			}
+			ul input[type=text] {
+				border: 1px solid #ccc;  
+			}
+			}
+            li {
+            float: left;
+            }
+
+            li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+            background-color: limegreen;
+            }
+
+            .active {
+            background-color: limegreen;
+            }
+			* {box-sizing: border-box;}
+			body {font-family: Verdana, sans-serif;}
+			.mySlides {display: none;}
+			img {vertical-align: middle;}
+
+			/* Slideshow container */
+			.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+			}
+
+			/* Caption text */
+			.text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+			}
+
+			/* Number text (1/4 etc) */
+			.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+			}
+
+			/* The dots/bullets/indicators */
+			.dot {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+			}
+
+			.active {
+			background-color: limegreen;
+			}
+
+			/* Fading animation */
+			.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+			}
+
+			@-webkit-keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			@keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			/* On smaller screens, decrease text size */
+			@media only screen and (max-width: 300px) {
+			.text {font-size: 11px}
+			}
+			body{
+				background-color: #14bb06;
+				padding: 0;
+				margin: 10x;
+				font-family: Times New Roman, sans;
+			}
+			.body-responsive{
+				margin-bottom: 15px
+			}
+			.body-responsive .Artikel{
+				background-color:#14bb06;
+				float: left;
+				width: 50%;
+				text-align: center;
+			}
+			.body-responsive .Artikel h3, .body-responsive .Artikel h6, .body-responsive .Artikel img, .body-responsive .Artikel p{
+				margin: 5px
+				padding: 14px 25px;
+			}
+			@media (max-width: 500px){
+				.body-responsive .Artikel{
+					background-color: #14bb06;
+					float: right;
+					width: 50%
+				}
+			
+			}
+			
+            .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 22px;
+            background-color: #092508;
+            color: white;
+            text-align: center;
+            }
+		</style>
+		</head>
+		<body>
+        <ul>
+            <li><a href="Home.html" >HOME</a></li>
+			<div class="search-container">
+				<form action="/action_page.php">
+				  <input type="text" placeholder="Search.." name="search">
+				  <button href="https://www.google.com/webhp?client=firefox-b-d" type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>	
+			<li style="float:right"><a></a></li>
+            <li style="float:right"><a href="Galery.html" >GALERY</a></li>
+			<li style="float:right">
+				<div class="dropdown">
+					<a class="active" style=color:white href="Menu.html">MENU</a>
+					<div class="dropdown-content">
+					<a href="Pengolahan Tanah.html">Pengolahan Tanah</a>
+					<a href="Pembibitan.html" class="active">Pembibitan</a>
+					<a href="Pemupukan.html">Pemupukan</a>
+					<a href="http://www.priangan.org/dashboard/umum/11/sentra">Informasi Harga Jual</a>
+					</div>
+				</div>
+			</li>
+            <li style="float:right"><a href="Contact Us.html" >CONTACT US</a></li>
+        </ul>
+        <div id="Write">
+			<h1 style="text-align:center">SEMUA TENTANG DUNIA PERTANIAN</h1>
+		</div>
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 4</div>
+				<img src="https://tabloidsinartani.com/uploads/news/images/770x413/-_200509140948-388.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pengolahan Tanah</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">2 / 4</div>
+				<img src="https://www.rmoljateng.com/images/berita/2019/03/108759_04183906032019_tanaman_hortikultural_.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pembibitan</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">3 / 4</div>
+				<img src="https://asset.kompas.com/crops/P5UF6sNb4CUY-7xJ81zS3BnEt3k=/7x0:1000x662/750x500/data/photo/2021/01/20/6007b74724c75.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pemupukan</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">4 / 4</div>
+				<img src="https://s3-ap-southeast-1.amazonaws.com/8villages/a1d3bd72-f4e8-4bfa-b595-becf26cf76a8-mobile.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pemasaran</div>
+			  </div>
+			  
+			  </div>
+			<br>
+			
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div>
+			
+			<script>
+			var slideIndex = 0;
+			showSlides();
+			
+			function showSlides() {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			  }
+			  slideIndex++;
+			  if (slideIndex > slides.length) {slideIndex = 1}    
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			  setTimeout(showSlides, 2000); // Change image every 2 seconds
+			}
+			</script>
+		<div id="Write">
+			<h2 style="text-align:center;margin-top: 50px;">PEMBIBITAN</h2>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel">
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Teknik pembibitan/pembiakan tanaman merupakan suatu cara untuk memperbanyak suatu tanaman agar bisa melestarikan jenis tanaman tersebut, setiap tanaman cara pembiakan bisa dilakukan dengan beberapa teknik pembiakan.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Untuk teknik dan cara pembibitan/pembiakan bisa dilakukan dengan beberapa cara yaitu secara Generatif (reproduksi generatif) dan Vegetatif (reproduksi vegetatif), untuk lebih detailnya tentang pembiakan tanaman akan saya jelaskan sedikit di bawah ini.</h4>
+				<h3 style="text-align: justify;padding-left: 50px;padding-right: 50px;">JENIS PEMBIBITAN/PEMBIAKAN TANAMAN</h3>
+				<h3 style="text-align: justify;padding-left: 50px;padding-right: 50px;">A. Pembiakan Tanaman Secara Generatif</h3>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Pembiakan tanaman secara generatif adalah perkembangbiakan tanaman yang dilakukan dengan cara perkawinan atau seksual. Pembiakan generatif bisa dilakukan dengan biji. Pembiakan dengan biji harus disiapkan dengan sebaiknya, biji harus diperoleh dari tanaman induk yang sehat dan memiliki hasil baik.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Biji yang sudah disiapkan harus disemai di polybag atau di bedengan, media semai harus ditutup untuk melindungi bibit dari pengaruh lingkungan yang kurang baik untuk pertumbuhan bibit, pengaruh lingkungan tersebut berupa cahaya sinar matahari dan air hujan secara langsung pada bibit sebaiknya media semai di tutup oleh plastik untuk melindunginya.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Bedengan persemaian harus disiapkan dengan baik dari media semai berupa tanah atau sekam bakar sampai drainase air. Hal ini dimaksudkan agar media pembibitan memiliki permukaan yang gembur sehingga pembibitan bisa tumbuh dengan baik, media semai bisa menampung resapan air dan tidak tergenang oleh air.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Setelah bibit tumbuh dengam baik dan siap dipindahkan ke lahan, maka penutup media semai dapat dibuka secara bertahap (dibuka sedikit demi sedikit agar bibit dapat beradaptasi dengan lingkungan. Adapun beberapa contoh dari tanaman yang dapat diperbanyak dengan pembiakan biji adalah seledri, kacang panjang, cabai dan tomat.</h4>
+				<h3 style="text-align: justify;padding-left: 50px;padding-right: 50px;">B. Pembiakan Tanaman Secara Vegetatif</h3>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Pembiakan tanaman secara vegetatif adalah perkembangbiakan tanaman yang dilakukan dengan cara tanpa perkawinan atau aseksual. Pembiakan tanaman vegetatif bisa terjadi secara alami (tanpa campur tangan manusia) dan buatan (dengan campur tangan manusia).</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">1. Pembiakan Vegetatif Secara Alami</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Pembiakan vegetatif secara alami adalah perkembangbiakan tanpa ada perkawinan atau aseksual yang terjadi tanpa ada campur tangan manusia. Beberapa contoh tanaman atau tumbuhan yang perkembangbiakan vegetatif secara alami:</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Tunas contohnya nanas, pisang dan bambu</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Spora contohnya lumut dan pakis</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Umbi lapis contohnya bawang bombai dan bawang putih.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">2. Pembiakan Vegetatif Secara Buatan</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Pembiakan vegetatif secara buatan adalah perkembamgbiakan yang dilakukan dengan bantuan manusia melalui beberapa teknik untuk menghasilkan individu baru yang sama dengan karakteristik individu induknya, karena pembiakan vegetatif bisa menghasilkan keturunan yang sama dengan individu induknya sehingga hasil dan waktu tanam bisa dipersingkat.</h4>
+				<h3 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Teknik-teknik Pembiakan Vegetatif Pada Tanaman</h3>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Ada bermacam-macam teknik untuk jenis tumbuhan yang berbeda. Beberapa teknik tersebut bisa memanfaatkan organ reproduksi khusus dan teknik lainnya dengan merangsang pertumbuhan baru pada bagian tumbuhan. Berikut teknik yang dipakai untuk pembiakan tanaman, gambar dibawah contoh pembiakan bunga aster dengan cara setek.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Penyetekan (Setek)</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Perkembangbiakan melalui setek dilakukan dengan cara menanam langsung bagian tanaman tanpa menunggu tanaman tersebut memiliki akar terlebih dahulu. Untuk membuat tanaman memiliki akar bisa menggunakan ZPT (zat pengatur tumbuh).Cara setek ada yang menggunakan batang dan daun. Contoh tamanan menggunakan setek batang : bunga krisan, mawar. Contoh tanaman menggunakan setek daun: geranium, cocor bebek.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Perundukan</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Perkembangbiakan melalui perundukan dilakukan dengan cara menempelkan bagian tanaman hingga sampai tanah lalu mengubur bagian tanaman tersebut dengan tanah. Contoh tanaman dengan perkembangbiakan perundukan: anggur, alamanda.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Pencangkokan (Cangkok)</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">Perkembangbiakan yang dilakukan agar mendapatkan tumbuhan baru yang cepat berbuah dan karakteristiknya sama dengan induknya. Perkembangbiakan cangkok dilakukan dengan cara membuat batang berakar. Pada tanaman buah banyak perkembangbiakannya melaui cangkok, contoh tanaman buah: jeruk, mangga.</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;">- Penyambungan</h4>
+				<h4 style="text-align: justify;padding-left: 50px;padding-right: 50px;padding-bottom: 50px;">Teknik penyambungan adalah teknik perkembangbiakan dengan menggabungkan batang bawah dan batang atas dua tanaman yang sejenis yang sudah dipotong. Teknik ini memiliki tujuan untuk menggabungkan sifat-sifat unggul dari dua tanaman sejenis sehingga diperoleh satu tanaman yang memiliki sifat-sifat unggul.</h4>
+			</div>
+		</div>
+		<img src="https://www.djarumtreesforlife.org//uploads/programkami/81515171600.jpg" width="50%" style="padding-top: 50px;padding-bottom: 10px;padding-right: 20px;padding-left: 10px;">
+		<img src="https://cdn-2.tstatic.net/makassar/foto/bank/images/bibit-tanaman-revegetasi-untuk-reklamasi-tambang.jpg" width="50%" style="padding-top: 50px;padding-bottom: 10px;padding-right: 20px;padding-left: 10px;">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOryZ52uwwjsXJ04_B-dZSrtjctbFIdD4Dlg&usqp=CAU" width="50%" style="padding-top: 50px;padding-bottom: 10px;padding-right: 20px;padding-left: 10px;">
+		<img src="https://awsimages.detik.net.id/api/wm/2020/09/06/melihat-pusat-pembibitan-tanaman-durian-di-magelang_169.jpeg?wid=54&w=650&v=1&t=jpeg" width="50%" style="padding-top: 50px;padding-bottom: 10px;padding-right: 20px;padding-left: 10px;">
+		<div class="footer">
+        </div>
+	</body>
+</html>

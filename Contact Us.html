@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Halaman Web Responsive</title>
+			<link rel="stylesheet" type="text/css" href="style.css">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+        	ul {
+            width: 100%;
+            height: 44px;
+            float: left;
+            margin: 10;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+			}
+			ul .search-container{
+				float: left;
+			}
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: rgba(0,0,0,.2);
+			min-width: 160px;
+			}
+			.dropdown-content a {
+			color: white;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			z-index: 1;
+			}
+			.dropdown-content a:hover {background-color: #bdd2b6}
+			.dropdown:hover .dropdown-content {
+			display: block;
+			z-index: 1;
+			}
+			.dropdown:hover .dropbtn {
+			background-color: #bdd2b6;
+			z-index: 1;
+			}
+			ul input[type=text] {
+			padding: 6px;
+			margin-top: 5.5px;margin-left: 10px;
+			font-size: 17px;
+			border: none;
+			}
+			ul .search-container button {
+			float: right;
+			padding:6px 10px;
+			margin-top: 5.5px;
+			margin-right: 16px;
+			background: #ddd;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			}
+			ul .search-container button:hover {
+			background: #ccc;
+			}
+			@media screen and (max-width: 600px) {
+			ul .search-container {
+				float: none;
+			}
+
+			ul a, ul input[type=text], ul .search-container button {
+				float: none;
+				display: block;
+				text-align: left;
+				width: 100%;
+				margin: 0;
+				padding: 14px;
+			}
+			ul input[type=text] {
+				border: 1px solid #ccc;  
+			}
+			}
+            li {
+            float: left;
+            }
+
+            li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+            background-color: #bdd2b6;
+            }
+
+            .active {
+            background-color: #798777;
+            }
+			* {box-sizing: border-box;}
+			body {font-family: Verdana, sans-serif;}
+			.mySlides {display: none;}
+			img {vertical-align: middle;}
+
+			/* Slideshow container */
+			.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+			}
+
+			/* Caption text */
+			.text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+			}
+
+			/* Number text (1/4 etc) */
+			.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+			}
+
+			/* The dots/bullets/indicators */
+			.dot {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+			}
+
+			.active {
+			background-color: #798777;
+			}
+
+			/* Fading animation */
+			.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+			}
+
+			@-webkit-keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			@keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			/* On smaller screens, decrease text size */
+			@media only screen and (max-width: 300px) {
+			.text {font-size: 11px}
+			}
+			body{
+				background-color: rgba(0,0,0,.2);
+				padding: 0;
+				margin: 10x;
+				font-family: Times New Roman, sans;
+			}
+			.body-responsive{
+				margin-bottom: 15px
+			}
+			.body-responsive .Artikel{
+				background-color:#bdd2b6;
+				float: left;
+				width: 33%;
+				text-align: center;
+			}
+			.body-responsive .Artikel h4, .body-responsive .Artikel h6, .body-responsive .Artikel img, .body-responsive .Artikel p{
+				margin: 5px
+				padding: 14px 25px;
+			}
+
+			@media (max-width: 500px){
+				.body-responsive .Artikel{
+					background-color: #bdd2b6;
+					float: left;
+					width: 75%
+				}
+			}
+			@media (min-width: 500px)(max-width: 1000px){
+				.body-responsive .Artikel{
+					background-color: #bdd2b6;
+					float: left;
+					width:33%
+			    }
+			}
+            .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 22px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            }
+		</style>
+		</head>
+		<body>
+        <ul>
+            
+			<div class="search-container">
+				<form action="/action_page.php">
+				  <input type="text" placeholder="Search.." name="search">
+				  <button href="https://www.google.com/webhp?client=firefox-b-d" type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>	
+			<li style="float:right"><a></a></li>
+            <li style="float:right"><a href="Galery.html" >GALERY</a></li>
+			<li style="float:right">
+				<div class="dropdown">
+					<a class="dropbtn" style=color:white href="Menu.html">MENU</a>
+					<div class="dropdown-content">
+					<a href="Pengolahan Tanah.html">Pengolahan Tanah</a>
+					<a href="Pembibitan.html">Pembibitan</a>
+					<a href="Pemupukan.html">Pemupukan</a>
+					<a href="http://www.priangan.org/dashboard/umum/11/sentra">Informasi Harga Jual</a>
+					</div>
+				</div>
+			</li>
+            <li style="float:right" class="active"><a href="Contact Us.html" >CONTACT US</a></li>
+			<li style="float: right"><a href="Home.html" >HOME</a></li>
+        </ul>
+        
+		<div class="footer">
+            <p></p>
+        </div>
+	</body>
+</html>

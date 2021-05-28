@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Halaman Web Responsive</title>
+			<link rel="stylesheet" type="text/css" href="style.css">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+        	ul {
+            width: 100%;
+            height: 44px;
+            float: left;
+            margin: 10;
+            padding: 0;
+            overflow: hidden;
+            background-color: #092508;
+			}
+			ul .search-container{
+				float: left;
+			}
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #14bb06;
+			min-width: 160px;
+			}
+			.dropdown-content a {
+			color: white;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			z-index: 1;
+			}
+			.dropdown-content a:hover {background-color: #14bb06}
+			.dropdown:hover .dropdown-content {
+			display: block;
+			z-index: 1;
+			}
+			.dropdown:hover .dropbtn {
+			background-color: limegreen;
+			z-index: 1;
+			}
+			ul input[type=text] {
+			padding: 6px;
+			margin-top: 5.5px;margin-left: 10px;
+			font-size: 17px;
+			border: none;
+			}
+			ul .search-container button {
+			float: right;
+			padding:6px 10px;
+			margin-top: 5.5px;
+			margin-right: 16px;
+			background: #ddd;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			}
+			ul .search-container button:hover {
+			background: #ccc;
+			}
+			@media screen and (max-width: 600px) {
+			ul .search-container {
+				float: none;
+			}
+
+			ul a, ul input[type=text], ul .search-container button {
+				float: none;
+				display: block;
+				text-align: left;
+				width: 100%;
+				margin: 0;
+				padding: 14px;
+			}
+			ul input[type=text] {
+				border: 1px solid #ccc;  
+			}
+			}
+            li {
+            float: left;
+            }
+
+            li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+            background-color: limegreen;
+            }
+
+            .active {
+            background-color: limegreen;
+            }
+			* {box-sizing: border-box;}
+			body {font-family: Verdana, sans-serif;}
+			.mySlides {display: none;}
+			img {vertical-align: middle;}
+
+			/* Slideshow container */
+			.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+			}
+
+			/* Caption text */
+			.text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+			}
+
+			/* Number text (1/4 etc) */
+			.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+			}
+
+			/* The dots/bullets/indicators */
+			.dot {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+			}
+
+			.active {
+			background-color: limegreen;
+			}
+
+			/* Fading animation */
+			.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+			}
+
+			@-webkit-keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			@keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			/* On smaller screens, decrease text size */
+			@media only screen and (max-width: 300px) {
+			.text {font-size: 11px}
+			}
+			body{
+				background-color: #14bb06;
+				padding: 0;
+				margin: 10x;
+				font-family: Times New Roman, sans;
+			}
+			.body-responsive{
+				margin-bottom: 15px
+			}
+			.body-responsive .Artikel{
+				background-color:#14bb06;
+				float: left;
+				width: 33%;
+				text-align: center;
+			}
+			.body-responsive .Artikel h4, .body-responsive .Artikel h6, .body-responsive .Artikel img, .body-responsive .Artikel p{
+				margin: 5px
+				padding: 14px 25px;
+			}
+
+			@media (max-width: 500px){
+				.body-responsive .Artikel{
+					background-color: #14bb06;
+					float: left;
+					width: 75%
+				}
+			}
+			@media (min-width: 500px)(max-width: 1000px){
+				.body-responsive .Artikel{
+					background-color: #22831e;
+					float: left;
+					width:33%
+			    }
+			}
+            .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 22px;
+            background-color: #092508;
+            color: white;
+            text-align: center;
+            }
+		</style>
+		</head>
+		<body>
+        <ul>
+            <li><a href="Home.html" >HOME</a></li>
+			<div class="search-container">
+				<form action="/action_page.php">
+				  <input type="text" placeholder="Search.." name="search">
+				  <button href="https://www.google.com/webhp?client=firefox-b-d" type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>	
+			<li style="float:right"><a></a></li>
+            <li style="float:right" class="active"><a href="Galery.html" >GALERY</a></li>
+			<li style="float:right">
+				<div class="dropdown">
+					<a class="dropbtn" style=color:white href="Menu.html">MENU</a>
+					<div class="dropdown-content">
+					<a href="Pengolahan Tanah.html">Pengolahan Tanah</a>
+					<a href="Pembibitan.html">Pembibitan</a>
+					<a href="Pemupukan.html">Pemupukan</a>
+					<a href="http://infoharga.bappebti.go.id/">Informasi Harga Jual</a>
+					</div>
+				</div>
+			</li>
+            <li style="float:right"><a href="Contact Us.html" >CONTACT US</a></li>
+        </ul>
+        <div id="Write">
+			<h1 style="text-align:center">SEMUA TENTANG DUNIA PERTANIAN</h1>
+		</div>
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+			  <div class="numbertext">1 / 4</div>
+			  <img src="https://tabloidsinartani.com/uploads/news/images/770x413/-_200509140948-388.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+			  <div class="text">Pengolahan Tanah</div>
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">2 / 4</div>
+			  <img src="https://www.rmoljateng.com/images/berita/2019/03/108759_04183906032019_tanaman_hortikultural_.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+			  <div class="text">Pembibitan</div>
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">3 / 4</div>
+			  <img src="https://asset.kompas.com/crops/P5UF6sNb4CUY-7xJ81zS3BnEt3k=/7x0:1000x662/750x500/data/photo/2021/01/20/6007b74724c75.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+			  <div class="text">Pemupukan</div>
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">4 / 4</div>
+			  <img src="https://s3-ap-southeast-1.amazonaws.com/8villages/a1d3bd72-f4e8-4bfa-b595-becf26cf76a8-mobile.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+			  <div class="text">Pemasaran</div>
+			</div>
+			
+			</div>
+			<br>
+			
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div>
+			
+			<script>
+			var slideIndex = 0;
+			showSlides();
+			
+			function showSlides() {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			  }
+			  slideIndex++;
+			  if (slideIndex > slides.length) {slideIndex = 1}    
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			  setTimeout(showSlides, 2000); // Change image every 2 seconds
+			}
+			</script>
+        <div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel" style="background-color:charcoal">
+				<img src="https://tabloidsinartani.com/uploads/news/images/770x413/-_200509140948-388.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://www.rmoljateng.com/images/berita/2019/03/108759_04183906032019_tanaman_hortikultural_.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://asset.kompas.com/crops/P5UF6sNb4CUY-7xJ81zS3BnEt3k=/7x0:1000x662/750x500/data/photo/2021/01/20/6007b74724c75.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel" style="background-color:charcoal">
+				<img src="https://s3-ap-southeast-1.amazonaws.com/8villages/a1d3bd72-f4e8-4bfa-b595-becf26cf76a8-mobile.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://agungbudisantoso.com/wp-content/uploads/2018/05/photo_2018-05-03_10-50-48.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://cdn-2.tstatic.net/banjarmasin/foto/bank/images/warga-desa-muning-baru-kecamatan-daha-selatan.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel" style="background-color:charcoal">
+				<img src="https://assets-a1.kompasiana.com/items/album/2020/08/07/untitled-1-5f2cfd85097f3602b942b083.png?t=o&v=1200" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="data:image/jpeg;base64,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" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://img.jatimpos.id/img/content/2019/08/25/7071/meriahnya-acara-minggu-pertanian-di-surabaya-HaJB0eYKhd.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel" style="background-color:charcoal">
+				<img src="https://www.berdesa.com/wp-content/uploads/2016/01/Tata-Niaga-Hasil-Pertanian.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://www.djarumtreesforlife.org//uploads/programkami/81515171600.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://cdn-2.tstatic.net/makassar/foto/bank/images/bibit-tanaman-revegetasi-untuk-reklamasi-tambang.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel" style="background-color:charcoal">
+				<img src="https://sulut.litbang.pertanian.go.id/images/BajakSingkap.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://tabloidsinartani.com/uploads/news/images/inline/210218153040-707.png" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://s3-ap-southeast-1.amazonaws.com/8villages/462e4a44-93a0-4650-a3e8-bd84918e54ff-mobile.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel" style="background-color:charcoal">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOryZ52uwwjsXJ04_B-dZSrtjctbFIdD4Dlg&usqp=CAU" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="https://awsimages.detik.net.id/api/wm/2020/09/06/melihat-pusat-pembibitan-tanaman-durian-di-magelang_169.jpeg?wid=54&w=650&v=1&t=jpeg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="http://kumpulrejo.desa.id//upload/berita/158147671727756_620.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel" style="background-color:charcoal">
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644532-627-306496.png" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644556-622-711190.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644579-498-978150.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel" style="background-color:charcoal">
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644603-878-908595.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644717-368-600409.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+			<div class="Artikel">
+				<img src="http://8villages-dashboard.s3.amazonaws.com/1519644761-608-210029.jpg" height="186px" width="75%" style="padding-top: 30px;">
+			</div>
+		</div>
+		<div class="footer">
+            <p></p>
+        </div>
+	</body>
+</html>

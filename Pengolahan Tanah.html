@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Pengolahan Tanah</title>
+			<link rel="stylesheet" type="text/css" href="style.css">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+        	ul {
+            width: 100%;
+            height: 44px;
+            float: left;
+            margin: 10;
+            padding: 0;
+            overflow: hidden;
+            background-color: #092508;
+			}
+			ul .search-container{
+				float: left;
+			}
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #14bb06;
+			min-width: 160px;
+			}
+			.dropdown-content a {
+			color: white;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			z-index: 1;
+			}
+			.dropdown-content a:hover {background-color: #14bb06}
+			.dropdown:hover .dropdown-content {
+			display: block;
+			z-index: 1;
+			}
+			.dropdown:hover .dropbtn {
+			background-color: limegreen;
+			z-index: 1;
+			}
+			ul input[type=text] {
+			padding: 6px;
+			margin-top: 5.5px;margin-left: 10px;
+			font-size: 17px;
+			border: none;
+			}
+			ul .search-container button {
+			float: right;
+			padding:6px 10px;
+			margin-top: 5.5px;
+			margin-right: 16px;
+			background: #ddd;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			}
+			ul .search-container button:hover {
+			background: #ccc;
+			}
+			@media screen and (max-width: 600px) {
+			ul .search-container {
+				float: none;
+			}
+
+			ul a, ul input[type=text], ul .search-container button {
+				float: none;
+				display: block;
+				text-align: left;
+				width: 100%;
+				margin: 0;
+				padding: 14px;
+			}
+			ul input[type=text] {
+				border: 1px solid #ccc;  
+			}
+			}
+            li {
+            float: left;
+            }
+
+            li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+            background-color: limegreen;
+            }
+
+            .active {
+            background-color: limegreen;
+            }
+			* {box-sizing: border-box;}
+			body {font-family: Verdana, sans-serif;}
+			.mySlides {display: none;}
+			img {vertical-align: middle;}
+
+			/* Slideshow container */
+			.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+			}
+
+			/* Caption text */
+			.text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+			}
+
+			/* Number text (1/4 etc) */
+			.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+			}
+
+			/* The dots/bullets/indicators */
+			.dot {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+			}
+
+			.active {
+			background-color: limegreen;
+			}
+
+			/* Fading animation */
+			.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+			}
+
+			@-webkit-keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			@keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+			}
+
+			/* On smaller screens, decrease text size */
+			@media only screen and (max-width: 300px) {
+			.text {font-size: 11px}
+			}
+			body{
+				background-color: #14bb06;
+				padding: 0;
+				margin: 10x;
+				font-family: Times New Roman, sans;
+			}
+			.body-responsive{
+				margin-bottom: 15px
+			}
+			.body-responsive .Artikel{
+				background-color:#14bb06;
+				float: left;
+				width: 50%;
+				text-align: center;
+			}
+			.body-responsive .Artikel h3, .body-responsive .Artikel h6, .body-responsive .Artikel img, .body-responsive .Artikel p{
+				margin: 5px
+				padding: 14px 25px;
+			}
+			@media (max-width: 500px){
+				.body-responsive .Artikel{
+					background-color: #14bb06;
+					float: right;
+					width: 50%
+				}
+			
+			}
+			
+            .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 22px;
+            background-color: #092508;
+            color: white;
+            text-align: center;
+            }
+		</style>
+		</head>
+		<body>
+        <ul>
+            <li><a href="Home.html" >HOME</a></li>
+			<div class="search-container">
+				<form action="/action_page.php">
+				  <input type="text" placeholder="Search.." name="search">
+				  <button href="https://www.google.com/webhp?client=firefox-b-d" type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>	
+			<li style="float:right"><a></a></li>
+            <li style="float:right"><a href="Galery.html" >GALERY</a></li>
+			<li style="float:right">
+				<div class="dropdown">
+					<a class="active" style=color:white href="Menu.html">MENU</a>
+					<div class="dropdown-content">
+					<a href="Pengolahan Tanah.html" class="active">Pengolahan Tanah</a>
+					<a href="Pembibitan.html">Pembibitan</a>
+					<a href="Pemupukan.html">Pemupukan</a>
+					<a href="http://www.priangan.org/dashboard/umum/11/sentra">Informasi Harga Jual</a>
+					</div>
+				</div>
+			</li>
+            <li style="float:right"><a href="Contact Us.html" >CONTACT US</a></li>
+        </ul>
+        <div id="Write">
+			<h1 style="text-align:center">SEMUA TENTANG DUNIA PERTANIAN</h1>
+		</div>
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 4</div>
+				<img src="https://tabloidsinartani.com/uploads/news/images/770x413/-_200509140948-388.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pengolahan Tanah</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">2 / 4</div>
+				<img src="https://www.rmoljateng.com/images/berita/2019/03/108759_04183906032019_tanaman_hortikultural_.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pembibitan</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">3 / 4</div>
+				<img src="https://asset.kompas.com/crops/P5UF6sNb4CUY-7xJ81zS3BnEt3k=/7x0:1000x662/750x500/data/photo/2021/01/20/6007b74724c75.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pemupukan</div>
+			  </div>
+			  
+			  <div class="mySlides fade">
+				<div class="numbertext">4 / 4</div>
+				<img src="https://s3-ap-southeast-1.amazonaws.com/8villages/a1d3bd72-f4e8-4bfa-b595-becf26cf76a8-mobile.jpg" style="width:1080px; height: 450px;border: 10px solid #092508;">
+				<div class="text">Pemasaran</div>
+			  </div>
+			  
+			  </div>
+			<br>
+			
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div>
+			
+			<script>
+			var slideIndex = 0;
+			showSlides();
+			
+			function showSlides() {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			  }
+			  slideIndex++;
+			  if (slideIndex > slides.length) {slideIndex = 1}    
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			  setTimeout(showSlides, 2000); // Change image every 2 seconds
+			}
+			</script>
+		<div id="Write">
+			<h2 style="text-align:center;margin-top: 50px;">PENGOLAHAN TANAH</h2>
+		</div>
+		<div class="body-responsive" style="background-color:#14bb06">
+			<div class="Artikel">
+				<h3 style="text-align: center;padding-left: 100px;">Beginilah Langkah-Langkah Pengolahan Tanah Pertanian</h4>
+				<h4 style="text-align: justify;padding-left: 100px;">Dahulu  banyak lahan gembur, akibat penggunaan pupuk kimia dan bahan pestisida lain yang tidak terkendali, ditengarai  mengakibatkan tanah menjadi padat.  Tanaman padi  akan tumbuh baik apabila ditanam pada daerah yang subur dan gembur. Kondisi yang demikian menjamin tersedianya  unsur hara dan oksigen menjadi cukup, oleh karena itu sebaiknya tanah diolah sedemikian rupa supaya menjadi gembur.</h4>
+				<h4 style="text-align: justify;padding-left: 100px;">Semua tahapan pengolahan tanah secara konvensional ini, biasanya membutuhkan waktu 16-18 hari tergantung pada lahan yang akan dikelola. Dalam mengolah tanah secara konvensional sebaiknya dilakukan satu minggu sebelum masa tanam dilakukan, hal tersebut dilakukan agar dalam kurun setelah pengolahan tanah, hama dan gulma sudah mati dan mikro organisme tanah dan hara yang dibutuhkan tanaman sudah tersedia dalam tanah.</h4>
+				<h4 style="text-align: justify;padding-left: 100px;">Sementara itu, pengolahan tanah secara konversi biasanya terdiri dari pengolahan tanah minimum (minimum tillage) dan TOT (tanpa olah tanah). Pada olah tanah ini sedikit menarik sebagian para petani karena dalam pelaksanaannya hanya dilakukan 1 tahun sekali untuk tanah yang memiliki tingkat kepadatan yang tinggi dan 2 tahun sekali apabila tanah memiliki tingkat kepadatan sedang.</h4>
+				<h4 style="text-align: justify;padding-left: 100px;">Tahapan pengolahan tanah bisa diawali dengan bajak, garu dan pembuatan guludan, namun dalam pengolahan tanah ini perlu memperhatikan ketepatan waktu dan ketepatan pengolahannya. Adapun langkah-langkah pengolahan lahan adalah sebagai berikut.</h4>
+				<strong style="text-align: justify;padding-left: 100px;float: left;">a. Pembersihan</strong>
+				<h4 style="text-align: justify;padding-left: 100px;float: left;">Pembersihan ini ditujukan pada selokan-selokan agar menjadi bersih guna  memperlancar aliran air irigasi yang masuk ke petak sawah. Disamping itu, jerami yang ada perlu dibabat untuk dijadikan kompos. Jerami ikut dibenamkan ke dalam tanah, lebih baik lagi jika ditaburi atau disemprot dengan  pembenah tanah (decomposer) agar pembusukannya lebih cepat dan sempurna.</h4>
+				<strong style="text-align: justify;padding-left: 100px;float: left;">b. Pencangkulan</strong>
+				<h4 style="text-align: justify;padding-left: 100px;float: left;">Pencangkulan ditujukan untuk memperbaiki pematang dan petak sawah yang sukar dibajak, fungsinya untuk memberishkan pematang dari gulma dan memperkuat pematang sehingga tidak jebol jika air yang masuk ke lahan cukup banyak, apalagi di musim penghujan. Pembersihan pematang juga berfungsi untuk mencegah hama tikus karena pematang yang bersih dengan sendirinya akan membuat tikus tidak nyaman untuk tinggal.</h4>
+				<strong style="text-align: justify;padding-left: 100px;float: left;">c. Pembuatan Saluran Drainase</strong>
+				<h4 style="text-align: justify;padding-left: 100px;float: left;">Saluran Drainase digunakan untuk mengatur tinggi air dan kondisi air lahan. Lahan yang terlalu sering dialiri air/tergenang akan membuat pertumbuhan tanaman padi terhambat.</h4>
+				<strong style="text-align: justify;padding-left: 100px;float: left;">d. Pembajakan</strong>
+				<h4 style="text-align: justify;padding-left: 100px;float: left;">Pembajakan bertujuan untuk memecah tanah menjadi bongkahan-bongkahan tanah, membalikkan tanah beserta tumbuhan rumput (jerami) sehingga akhirnya membusuk. Disamping itu, juga untuk mempercepat proses pembusukan dengan bantuan mikro organisme yang ada dalam tanah dengan inkubasi selama satu  minggu.</h4>
+				<strong style="text-align: justify;padding-left: 100px;float: left;">e. Penggaruan</strong>
+				<h4 style="text-align: justify;padding-left: 100px;float: left;padding-bottom: 100px;">Prinsip dasar pengaruan adalah  meratakan dan menghancurkan gumpalan-gumpalan tanah. Selama tanah digaru saluran pemasukan dan pengeluaran air ditutup agar lumpur tidak hanyut terbawa air keluar. Lumpur banyak mengandung bahan organik yang subur, jika hanyut maka akan mengurangi tingkat kesuburan lahan. Jika jumlah air yang ada di lahan terlalu banyak maka untuk mengurangi airnya dibuat saluran pembuangan pada lokasi tanah yang paling tinggi.  Penggaruan yang dilakukan berulang kali, memberikan keuntungan permukaan tanah menjadi rata, jika belum rata maka dilakukan perataan secara manual, lahan yang rata sempurna akan memudahkan dalam pengaturan air serta pengendalian hama utamanya orong-orong. Pelumpuran dari kegiatan penggaruan akan membuat air yang merembes ke bawah menjadi berkurang. Sisa tanaman atau rumput akan terbenam, sehingga akan menjadi pupuk dan menghambat tumbuhnya gulma dalam jangka waktu tertentu. Adanya penggaruan, maka penanaman menjadi mudah dilakukan.</h4>
+			</div>
+		</div>
+		<img src="https://sulut.litbang.pertanian.go.id/images/BajakSingkap.jpg" width="50%" style="padding-top: 70px;padding-bottom: 10px;padding-right: 20px;padding-left: 10px;">
+		<img src="https://tabloidsinartani.com/uploads/news/images/inline/210218153040-707.png" width="50%" style="padding-top: 50px;padding-bottom: 10px;padding-right: 20px;padding-left: 10px;">
+		<img src="https://s3-ap-southeast-1.amazonaws.com/8villages/462e4a44-93a0-4650-a3e8-bd84918e54ff-mobile.jpg" width="50%" style="padding-top: 50px;padding-bottom: 10px;padding-right: 20px;padding-left: 10px;">
+		<div class="footer">
+        </div>
+	</body>
+</html>
